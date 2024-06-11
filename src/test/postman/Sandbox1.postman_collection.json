@@ -1,0 +1,827 @@
+{
+	"info": {
+		"_postman_id": "86d93ae7-15a5-4e04-afce-160e7b7108f3",
+		"name": "Sandbox1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "68",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Sep 2018 21:20:05 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"body": "{\"server-time\":\"September 19, 2018 2:20:05 PM PDT\",\"locale\":\"en_US\"}"
+				}
+			]
+		},
+		{
+			"name": "/isAlive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/isAlive",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"isAlive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/data/result",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"server\": \"test-server1\",\n\"epoch\": 1531694299101,\n\"name\": \"QryLp HTTP Request\",\n\"elapsed\": 823,\n\"responseCode\": 200,\n\"responseMsg\": \"OK\",\n\"success\": true,\n\"latency\": 1434,\n\"idle\": 744,\n\"connectTime\": 822\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/data/result",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"data",
+						"result"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/data/cpu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"server\": \"pre-server1\",\n\"date\": \"09/18/2017 13:14:13\",\n\"usr\": 0.09,\n\"sys\": 0.08,\n\"wio\": 0.07,\n\"idle\": 0.99\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/data/cpu",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"data",
+						"cpu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/data/load",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"server\": \"pre-server1\",\n\"date\": \"09/18/2017 13:14:13\",\n\"one\": 0.05,\n\"five\": 0.02,\n\"fifteen\": 0.03\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/data/load",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"data",
+						"load"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/data/process",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"server\": \"pre-server1\",\n\"process\": \"processNum-001\",\n\"date\": \"09/18/2017 13:14:13\",\n\"cpu\": 0.05,\n\"thread\": 12,\n\"vsz\": 32.21,\n\"rss\": 44.32\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/data/process",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"data",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/jmeter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/jmeter",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"jmeter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/cpu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/cpu",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"cpu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/load",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/load",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"load"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/process",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/process",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"process"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/stats/process",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/stats/process",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"stats",
+								"process"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "675",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Sep 2018 20:55:06 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"server\":\"v911r-covgapp1\",\"process\":\"tomcat-lis2\",\"results\":{\"vszmb\":{\"minima\":32.21,\"maxima\":32.21,\"average\":32.209999,\"stddev\":0.0},\"cpu\":{\"minima\":0.05,\"maxima\":0.05,\"average\":0.05,\"stddev\":0.0},\"thread\":{\"minima\":12.0,\"maxima\":12.0,\"average\":12.0,\"stddev\":0.0},\"rssmb\":{\"minima\":44.32,\"maxima\":44.32,\"average\":44.32,\"stddev\":0.0}}},{\"server\":\"pre-server1\",\"process\":\"processNum-001\",\"results\":{\"vszmb\":{\"minima\":32.21,\"maxima\":32.21,\"average\":32.209999,\"stddev\":0.0},\"cpu\":{\"minima\":0.05,\"maxima\":0.05,\"average\":0.05,\"stddev\":0.0},\"thread\":{\"minima\":12.0,\"maxima\":12.0,\"average\":12.0,\"stddev\":0.0},\"rssmb\":{\"minima\":44.32,\"maxima\":44.32,\"average\":44.32,\"stddev\":0.0}}}]"
+				}
+			]
+		},
+		{
+			"name": "/stats/jmeter/size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/jmeter/size",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"jmeter",
+						"size"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/cpu/size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/cpu/size?server=v911r-covgapp1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"cpu",
+						"size"
+					],
+					"query": [
+						{
+							"key": "server",
+							"value": "v911r-covgapp1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/load/size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/load/size?server=v911r-covgapp1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"load",
+						"size"
+					],
+					"query": [
+						{
+							"key": "server",
+							"value": "v911r-covgapp1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/process/size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/process/size?server=v911r-covgapp1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"process",
+						"size"
+					],
+					"query": [
+						{
+							"key": "server",
+							"value": "v911r-covgapp1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/stats/process/size",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/stats/process/size?server=v911r-covgapp1",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"stats",
+								"process",
+								"size"
+							],
+							"query": [
+								{
+									"key": "server",
+									"value": "v911r-covgapp1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "13",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Sep 2018 21:13:20 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"body": "{\"size\":7475}"
+				}
+			]
+		},
+		{
+			"name": "/stats/jmeter?columns&{{columnName}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/jmeter?column=elapsed&server=pre-server1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"jmeter"
+					],
+					"query": [
+						{
+							"key": "column",
+							"value": "elapsed"
+						},
+						{
+							"key": "server",
+							"value": "pre-server1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/cpu?columns&{{columnName}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/cpu?column=usr&server=pre-server1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"cpu"
+					],
+					"query": [
+						{
+							"key": "column",
+							"value": "usr"
+						},
+						{
+							"key": "server",
+							"value": "pre-server1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stats/load?columns&{{columnName}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/load?column=1min&server=pre-server1",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"load"
+					],
+					"query": [
+						{
+							"key": "column",
+							"value": "1min"
+						},
+						{
+							"key": "server",
+							"value": "pre-server1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/stats/load?columns&{{columnName}}",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/stats/load?column=1min&server=v911r-covgapp1",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"stats",
+								"load"
+							],
+							"query": [
+								{
+									"key": "column",
+									"value": "1min"
+								},
+								{
+									"key": "server",
+									"value": "v911r-covgapp1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "70",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Sep 2018 21:19:42 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"body": "{\"1min\":{\"minima\":0.56,\"maxima\":1.32,\"average\":1.165731,\"stddev\":0.0}}"
+				}
+			]
+		},
+		{
+			"name": "/stats/process?columns&{{columnName}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/stats/process?column=thread&server=pre-server1&process=processNum-001",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"stats",
+						"process"
+					],
+					"query": [
+						{
+							"key": "column",
+							"value": "thread"
+						},
+						{
+							"key": "server",
+							"value": "pre-server1"
+						},
+						{
+							"key": "process",
+							"value": "processNum-001"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/stats/process?columns&{{columnName}}",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/stats/process?column=thread&server=v911r-covgapp1&process=tomcat-lis",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"stats",
+								"process"
+							],
+							"query": [
+								{
+									"key": "column",
+									"value": "thread"
+								},
+								{
+									"key": "server",
+									"value": "v911r-covgapp1"
+								},
+								{
+									"key": "process",
+									"value": "tomcat-lis"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "134",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 19 Sep 2018 21:14:21 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"server\":\"v911r-covgapp1\",\"process\":\"tomcat-lis\",\"results\":{\"thread\":{\"minima\":68.0,\"maxima\":69.0,\"average\":68.7786,\"stddev\":0.0}}}]"
+				}
+			]
+		},
+		{
+			"name": "/data/result",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/data/result",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"data",
+						"result"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/data/cpu",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/data/cpu",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"data",
+						"cpu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/data/load",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/data/load",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"data",
+						"load"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/data/process",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/data/process",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"data",
+						"process"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

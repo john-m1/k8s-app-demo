@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-app-demo
+  labels:
+    app: appdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appdemo
+  template:
+    metadata:
+      labels:
+        app: appdemo
+    spec:
+      containers:
+      - name: k8s-app-demo
+        image: localhost/k8sdemo:0.2
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_SRVPORT
+          value: "3306"
+        - name: MYSQL_SRV
+          value: "mysql.default.svc.cluster.local"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: appdemo
+spec:
+  ports:
+  - port: 8080
+  selector:
+    app: appdemo
+

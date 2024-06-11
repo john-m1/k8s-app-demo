@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="beans.xml"/>
+    
+    <!-- 
+    NOTES:
+        each Dao bean requires access to the same db ( datasource )
+        each Dao bean requires access to their own specific table ( impl class )
+     -->
+    <bean id="jmeterDao" class="com.metro.atwater.data.jmeter.JmeterDaoImpl">
+        <property name="dataSource" ref="jmeterData"></property>
+    </bean>
+    
+    <bean id="cpuDao" class="com.metro.atwater.data.cpu.CpuDaoImpl">
+        <property name="dataSource" ref="jmeterData"></property>
+    </bean>
+    
+    <bean id="loadDao" class="com.metro.atwater.data.load.LoadDaoImpl">
+        <property name="dataSource" ref="jmeterData"></property>
+    </bean>
+    
+    <bean id="processDao" class="com.metro.atwater.data.process.ProcessDaoImpl">
+        <property name="dataSource" ref="jmeterData"></property>
+    </bean>
+    
+    <bean id="esxiDao" class="com.metro.atwater.data.esxi.EsxiDaoImpl">
+        <property name="dataSource" ref="abalData"></property>
+    </bean>
+
+    <bean id="lunsDao" class="com.metro.atwater.data.luns.LunsDaoImpl">
+        <property name="dataSource" ref="abalData"></property>
+    </bean>
+
+    <bean id="ServerInfoDao" class="com.metro.atwater.data.serverinfo.ServerInfoDaoImpl">
+        <property name="dataSource" ref="abalData"></property>
+    </bean>
+
+</beans>

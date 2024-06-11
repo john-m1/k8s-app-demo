@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	  
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="location">
+	        <value>database.properties</value>
+	    </property>
+	</bean>
+	<!-- 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	    <property name="driverClassName" value="${jdbc.driverClassName}" />
+	    <property name="url" value="${jdbc.url}" />
+	    <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+	</bean>
+    -->
+	<bean id="jmeterData" destroy-method="close"  class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.jmeter.driverClassName}" />
+        <property name="url" value="${jdbc.jmeter.url}" />
+        <property name="username" value="${jdbc.jmeter.username}" />
+        <property name="password" value="${jdbc.jmeter.password}" />
+	    <property name="initialSize" value="${jdbc.jmeter.initialPoolSize}"/>
+	    <property name="testOnBorrow" value="true" />
+        <property name="validationQuery" value="SELECT 1" />
+	</bean>
+	
+	<bean id="abalData" destroy-method="close"  class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${jdbc.abal.driverClassName}" />
+        <property name="url" value="${jdbc.abal.url}" />
+        <property name="username" value="${jdbc.abal.username}" />
+        <property name="password" value="${jdbc.abal.password}" />
+        <property name="initialSize" value="${jdbc.abal.initialPoolSize}"/>
+        <property name="testOnBorrow" value="true" />
+        <property name="validationQuery" value="SELECT 1" />        
+    </bean>
+    
+</beans>
